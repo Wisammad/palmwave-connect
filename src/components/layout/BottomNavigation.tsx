@@ -1,7 +1,7 @@
 
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { CreditCard, Home, Bell, User, Scan, MapPin, FileCheck } from "lucide-react";
+import { CreditCard, Home, Bell, User, Scan } from "lucide-react";
 
 const BottomNavigation = () => {
   return (
