@@ -1,6 +1,6 @@
 
 import React from "react";
-import { CreditCard, Trash2 } from "lucide-react";
+import { CreditCard, Trash2, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface PaymentMethodProps {
@@ -10,6 +10,8 @@ export interface PaymentMethodProps {
   expiry: string;
   type: "visa" | "mastercard" | "amex" | "bank";
   isDefault?: boolean;
+  onDelete?: () => void;
+  onSetDefault?: () => void;
 }
 
 const PaymentMethodCard = ({
@@ -18,6 +20,8 @@ const PaymentMethodCard = ({
   expiry,
   type,
   isDefault = false,
+  onDelete,
+  onSetDefault,
 }: PaymentMethodProps) => {
   return (
     <div className={cn(
@@ -28,9 +32,14 @@ const PaymentMethodCard = ({
         {isDefault ? (
           <span className="palm-pill bg-white/20 backdrop-blur-sm text-white text-xs">Default</span>
         ) : (
-          <button className="p-2 hover:bg-slate-100 rounded-full">
-            <Trash2 size={16} className="text-slate-400" />
-          </button>
+          <div className="flex gap-2">
+            <button className="p-2 hover:bg-slate-100 rounded-full" onClick={onSetDefault}>
+              <Star size={16} className="text-slate-400" />
+            </button>
+            <button className="p-2 hover:bg-slate-100 rounded-full" onClick={onDelete}>
+              <Trash2 size={16} className="text-slate-400" />
+            </button>
+          </div>
         )}
       </div>
       
