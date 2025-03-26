@@ -2,7 +2,7 @@
 import React from "react";
 import AppLayout from "@/components/layout/AppLayout";
 import StatusCard from "@/components/home/StatusCard";
-import { Wave, ArrowRight } from "lucide-react";
+import { Waves, ArrowRight } from "lucide-react";
 
 const Index = () => {
   return (
@@ -10,7 +10,7 @@ const Index = () => {
       <div className="flex justify-between items-center mb-4">
         <div>
           <div className="flex items-center gap-2">
-            <Wave size={22} className="text-palm-500" />
+            <Waves size={22} className="text-palm-500" />
             <h2 className="text-lg font-bold">Hello, Alex</h2>
           </div>
           <p className="text-muted-foreground text-sm">Welcome back to PalmPay</p>
